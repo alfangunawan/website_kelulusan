@@ -24,33 +24,33 @@ class HomeController extends Controller
         $setting = Setting::first();
         $dt = Carbon::now()->format('Y-m-d H:i:s');
 
-        $student = Student::query()->where('no_exam', $req_search)->get();
-        $studentCheck =  $student->count();
+        // $student = Student::query()->where('no_exam', $req_search)->get();
+        // $studentCheck =  $student->count();
 
-        if (isset($req_search)) {
+        // if (isset($req_search)) {
 
-            if ($studentCheck > 0) {
-                return view('frontend.index', [
-                    'web' => $web,
-                    'student' => $student,
-                    'setting' => $setting,
-                    'req_search' => $req_search,
-                    'dt' => $dt,
-                ]);
-            } else {
-                return view('frontend.not-found', [
-                    'web' => $web,
-                ]);
-            }
-        } else {
-            return view('frontend.null', [
-                'web' => $web,
-                'setting' => $setting,
-                'req_search' => $req_search,
-                'dt' => $dt,
+        //     if ($studentCheck > 0) {
+        //         return view('frontend.index', [
+        //             'web' => $web,
+        //             'student' => $student,
+        //             'setting' => $setting,
+        //             'req_search' => $req_search,
+        //             'dt' => $dt,
+        //         ]);
+        //     } else {
+        //         return view('frontend.not-found', [
+        //             'web' => $web,
+        //         ]);
+        //     }
+        // } else {
+        return view('frontend.null', [
+            'web' => $web,
+            'setting' => $setting,
+            'req_search' => $req_search,
+            'dt' => $dt,
 
-            ]);
-        }
+        ]);
+        // }
     }
 
     /**

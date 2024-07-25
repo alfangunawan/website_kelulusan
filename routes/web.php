@@ -49,6 +49,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
     Route::delete('/hapus_siswa', [StudentController::class, 'destroy']);
+    Route::delete('/hapus_semua_data', [DeleteAllController::class, 'destroy']);
 
     Route::prefix('/student')->group(function () {
         Route::get('/', [StudentController::class, 'index']);

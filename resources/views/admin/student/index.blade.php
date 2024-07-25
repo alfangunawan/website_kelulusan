@@ -24,7 +24,7 @@ Admin
         <div class="col-12">
             <div class="card box-shadow-0 border-info">
                 <div class="card-header card-head-inverse bg-secondary">
-                    <h3 class="card-title text-center">LIST SISWA</h3>
+                    <h3 class="card-title text-center">LIST Peserta</h3>
 
 
                 </div>
@@ -34,7 +34,7 @@ Admin
                         <span class="fa fa-trash"></span> Delete All &nbsp; </a>
 
                     <a href="/student/upload" class="btn btn-social btn-min-width mr-1 mb-1 btn-secondary pull-right" class="float-sm-left">
-                        <span class="fa fa-plus"></span> Upload Siswa &nbsp; </a>
+                        <span class="fa fa-plus"></span> Upload Data Peserta &nbsp; </a>
 
 
 
@@ -50,8 +50,8 @@ Admin
                                 <tr class="bg-success text-white" style="font-size: 14px;">
                                     <th>Nama</th>
                                     <th>Kelas</th>
-                                    <th>Nisn</th>
-                                    <th>No Ujian</th>
+                                    <th>NIM</th>
+                                    <th>GEN</th>
                                     <th>status </th>
                                     <th>Pesan</th>
                                     <th>Aksi</th>
@@ -62,10 +62,10 @@ Admin
 
                                 <tr style="font-size: 14px;" v-for="st in student">
 
-                                    <td>@{{ st.name }}</td>
-                                    <td>@{{ st.class }}</td>
-                                    <td>@{{ st.nisn }}</td>
-                                    <td>@{{ st.no_exam }}</td>
+                                    <td>@{{ st.nim }}</td>
+                                    <td>@{{ st.nama }}</td>
+                                    <td>@{{ st.kelas }}</td>
+                                    <td>@{{ st.gen }}</td>
                                     <td v-if="st.status == 1">
                                         <span class="badge bg-success">
                                             LULUS
@@ -75,6 +75,12 @@ Admin
                                     <td v-if="st.status == 2">
                                         <span class="badge bg-danger">
                                             DI TUNDA
+                                        </span>
+                                    </td>
+
+                                    <td v-if="st.status == 0">
+                                        <span class="badge bg-warning">
+                                            TIDAK LULUS
                                         </span>
                                     </td>
 
@@ -164,7 +170,7 @@ Admin
                     cancelButtonText: 'Cancel',
                     showLoaderOnConfirm: true,
                     preConfirm: () => {
-                        return axios.delete('/hapus_siswa')
+                        return axios.delete('/hapus_semua_data')
                             .then(function(response) {
                                 console.log(response.data);
                             })

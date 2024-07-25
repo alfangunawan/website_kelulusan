@@ -62,8 +62,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (16, '2022_04_23_165731_create_webs_table', 2),
 (18, '2022_04_24_132000_add_username_to_users', 3),
 (20, '2022_04_24_150207_create_settings_table', 4),
-(21, '2022_04_27_070016_create_schools_table', 5),
-(22, '2022_04_30_065432_add_nama_ortu_to_students', 6);
+(21, '2022_04_27_070016_create_schools_table', 5);
 
 -- --------------------------------------------------------
 
@@ -163,12 +162,10 @@ INSERT INTO `settings` (`id`, `status`, `date`, `time`, `created_at`, `updated_a
 
 CREATE TABLE `students` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `nisn` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `nama_ortu` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tempat_tgl_lahir` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `no_exam` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `class` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nim` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kelas` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `status` int(11) NOT NULL,
   `message` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -179,8 +176,8 @@ CREATE TABLE `students` (
 -- Dumping data for table `students`
 --
 
-INSERT INTO `students` (`id`, `nisn`, `name`, `nama_ortu`, `tempat_tgl_lahir`, `no_exam`, `class`, `status`, `message`, `created_at`, `updated_at`) VALUES
-(1, '12345611', 'FAUZI AGUSTIAN', 'BAPAK FAUZI', 'Bogor, 8 maret 1980', '121212', '12 IPA 5', 1, 'ANDA DINYATAKAN LULUS DARI SMA NEGERI 1 PARUNG', '2022-04-30 01:25:27', '2022-04-30 01:25:27');
+INSERT INTO `students` (`id`, `nim`, `nama`, `kelas`, `gen`, `status`, `message`, `created_at`, `updated_at`) VALUES
+(1, '12345611', 'FAUZI AGUSTIAN', 'SI-46-07', 'Sardnonia', 1, 'ANDA DINYATAKAN LULUS DARI GENESIS 2024', '2022-04-30 01:25:27', '2022-04-30 01:25:27');
 
 -- --------------------------------------------------------
 

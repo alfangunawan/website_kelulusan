@@ -88,8 +88,8 @@
                                         <form @submit.prevent="submitSearch">
 
                                             <div class="form-group text-center">
-                                                <input type="text" v-model="search" class="form-control mb-3" id="maxlength-position-inside" placeholder="NAMA LENGKAP" maxlength="17" />
-                                                <input type="text" v-model="search" class="form-control" id="maxlength-position-inside" placeholder="NIM" maxlength="17" />
+                                                <input name="nama" type="text" v-model="search" class="form-control mb-3" id="maxlength-position-inside" placeholder="NAMA LENGKAP" maxlength="17" />
+                                                <input name="nim" type="text" v-model="search" class="form-control" id="maxlength-position-inside" placeholder="NIM" maxlength="17" />
                                             </div>
                                             <br>
                                             <button type="submit" class="btn btn-success">CEK</button>

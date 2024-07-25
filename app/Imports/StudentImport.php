@@ -21,15 +21,23 @@ class StudentImport implements ToModel, WithStartRow
 
     public function model(array $row)
     {
+        // Debugging: dump and die to see the contents of $row
+        // dd($row);
+
+        // Ensure that 'nim' is not null or empty
+        if (empty($row[1])) {
+            // Handle the case where 'nim' is null or empty
+            // You can skip this row or throw an exception
+            return null;
+        }
+
         return new Student([
-            'nisn' => $row[1],
-            'name' => $row[2],
-            'nama_ortu' => $row[3],
-            'tempat_tgl_lahir' => $row[4],
-            'no_exam' => $row[5],
-            'class' => $row[6],
-            'status' => $row[7],
-            'message' => $row[8],
+            'nim' => $row[1],  // Adjusted index
+            'nama' => $row[2], // Adjusted index
+            'kelas' => $row[3], // Adjusted index
+            'gen' => $row[4], // Adjusted index
+            'status' => $row[5], // Adjusted index
+            'message' => $row[6], // Adjusted index
         ]);
     }
 }

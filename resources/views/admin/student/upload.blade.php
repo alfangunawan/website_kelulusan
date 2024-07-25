@@ -24,13 +24,13 @@ Admin
     <div class="col-12">
         <br>
         <div class="bs-callout-info callout-border-left mt-1 p-1">
-            <strong>Upload data siswa !</strong>
-            <p>Silahkan Upload Data siswa dengan Format File Ini : <a href="/files/format/EXEL-IMPORT-SISWA.xlsx" class="btn btn-sm btn-primary">Download Format Excel</a> </p>
+            <strong>Upload Data Peserta !</strong>
+            <p>Silahkan upload data peserta dengan Format File Ini : <a href="/files/format/EXEL-IMPORT-SISWA.xlsx" class="btn btn-sm btn-primary">Download Format Excel</a> </p>
         </div>
         <br>
         <div class="card box-shadow-0 border-info">
             <div class="card-header card-head-inverse bg-secondary">
-                <h3 class="card-title text-center">Upload Data Siswa</h3>
+                <h3 class="card-title text-center">Upload Data Peserta</h3>
 
 
             </div>

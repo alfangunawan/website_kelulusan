@@ -61,7 +61,7 @@ $web = Web::first();
     <!-- ======================================  CHART JS =======================================-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css" rel="stylesheet" />
     <!-- ======================================  CHART JS =======================================-->
-
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- END Custom CSS-->
 
     <!-- END Custom CSS-->

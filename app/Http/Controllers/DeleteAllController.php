@@ -79,6 +79,7 @@ class DeleteAllController extends Controller
     public function destroy()
     {
         $student = Student::all();
+        dd($student);
 
         try {
             $student->delete();
