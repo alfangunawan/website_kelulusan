@@ -10,6 +10,7 @@ use Carbon\Carbon;
 
 
 
+
 class HomeController extends Controller
 {
     /**
@@ -58,9 +59,38 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function check_kelulusan(Request $request)
     {
-        //
+        $request->validate(['nim' => 'required|string']);
+    
+        $student = Student::where('nim', $request->nim)->first();
+
+        if (!$student) {
+            // Jika NIM tidak ditemukan, kembalikan ke tampilan null dengan pesan error
+            return redirect()->route('home')->with('error', 'NIM tidak ditemukan. Silakan periksa kembali NIM yang Anda masukkan.');
+        }
+    
+        if ($student) {
+            if ($student->status == '1') {
+                return view('frontend.check_kelulusan.lulus', [
+                    'web' => Web::first(),
+                    'setting' => Setting::first(),
+                    'req_search' => $request->nim,
+                    'dt' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'student' => $student, // Menambahkan data siswa
+                ]); // Menggunakan view lulus
+            } else {
+                return view('frontend.check_kelulusan.tdk_lulus', [
+                    'web' => Web::first(),
+                    'setting' => Setting::first(),
+                    'req_search' => $request->nim,
+                    'dt' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'student' => $student, // Menambahkan data siswa
+                ]); // Menggunakan view tidak lulus
+            }
+        }
+    
+        return response()->json(['redirect' => '/error']); // Ganti dengan route halaman error jika NIM tidak ditemukan
     }
 
     /**

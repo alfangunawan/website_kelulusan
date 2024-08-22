@@ -25,17 +25,13 @@ use App\Http\Controllers\SklController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-
 /**
  * Home Routes
  */
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::post('/check', [HomeController::class, 'check_kelulusan'])->name('check');
+
 Route::get('/login', [AuthController::class, 'LoginForm'])->name('login');
 Route::post('login', [AuthController::class, 'authenticate'])->name('authenticate');
 
