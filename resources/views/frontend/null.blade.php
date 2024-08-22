@@ -22,10 +22,10 @@
     </style>
 </head>
 
-<body id="kt_body" data-bs-spy="scroll" data-bs-target="#kt_landing_menu" data-bs-offset="200" class="bg-white position-relative">
+<body id="kt_body" data-bs-spy="scroll" data-bs-target="#kt_landing_menu" data-bs-offset="200" class="position-relative">
     <div class="d-flex flex-column flex-root">
         <div class="mb-0" id="home">
-            <div class="bgi-no-repeat bgi-position-x-center bgi-position-y-bottom landing-dark-bg" style="background-image: url(/files/logo/background_home.jpg)">
+            <div class="bgi-no-repeat landing-dark-bg" style="background-image: url(/files/logo/background_home.jpg)">
                 <div class="landing-header" data-kt-sticky="true" data-kt-sticky-name="landing-header" data-kt-sticky-offset="{default: '200px', lg: '300px'}">
                     <div class="container">
                         <div class="d-flex align-items-center justify-content-between">
@@ -40,7 +40,6 @@
                                 </button>
 
                                 <a class="flex" href="/">
-                                    <img alt="Logo" src="/files/logo/{{ $web->logo ?? 'LOGO.png'}}" class="h-40px logo" />
                                     <h5 class="flex items-center text-white text-2xl font-bold">{{ $web->title ?? 'TITLE' }} </h5>
                                 </a>
                             </div>
@@ -50,55 +49,34 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="flex-equal text-end ms-1">
-                                <a href="/login" class="btn btn-primary">Masuk</a>
-                            </div>
                         </div>
                     </div>
                 </div>
                 <div id="app" v-cloak>
-                    <div class="d-flex flex-column flex-center w-100 min-h-350px min-h-lg-500px px-9">
-                        <!--begin::Alert-->
-                        <div class="tex-center mb-6">
+                    <div class="d-flex flex-column flex-center w-100 min-h-350px min-h-lg-500px px-9 pb-10">
+                        <div class="tex-center mb-2">
                             <img alt="Logo" src="/files/logo/knight.png" width="180px">
                         </div>
 
-                        <div class="alert alert-dismissible bg-white border border-primary d-flex flex-column flex-sm-row p-5 mb-10">
-                            <div class="d-flex flex-column">
-                                <!--begin::Title-->
-                                <h4 class="card-title text-dark" id="demo"></h4>
-                                <!--end::Content-->
-                            </div>
-                        </div>
-                        <!--end::Alert-->
-
                         <br>
                         @if($setting->status == 1)
-                        <h3 class="text-white text-3xl font-bold underline mb-15">SILAHKAN CEK KELULUSAN ANDA</h3>
-                        <div class="col-xl-12" v-if="currentDate() <= 0">
-                            <div class="card box-shadow-sm">
-
-                                <div class="card-content collpase show">
-                                    <br>
-
-                                    <div class="card-body card-dashboard text-center">
-                                        <p class="text-dark">MASUKAN NAMA LENGKAP DAN NIM KAMU</p>
-
-                                        <br>
-                                        <form @submit.prevent="submitSearch">
-
-                                            <div class="form-group text-center">
-                                                <input name="nama" type="text" v-model="search" class="form-control mb-3" id="maxlength-position-inside" placeholder="NAMA LENGKAP" maxlength="17" />
-                                                <input name="nim" type="text" v-model="search" class="form-control" id="maxlength-position-inside" placeholder="NIM" maxlength="17" />
-                                            </div>
-                                            <br>
-                                            <button type="submit" class="btn btn-success">CEK</button>
-                                        </form>
-                                        <br>
-                                        <br>
-
+                        <div class="max-w-sm bg-white rounded-lg overflow-hidden shadow-lg mx-auto">
+                            <div class="p-6">
+                                <h2 class="text-2xl font-bold text-gray-800 mb-2">Check Status Kelulusan</h2>
+                                <p class="text-gray-700 mb-6">Silahkan isi kolom berikut</p>
+                                <form>
+                                    <div class="mb-6">
+                                        <label class="block text-gray-700 font-bold mb-2" for="password">
+                                NIM
+                            </label>
+                                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="nim" type="text" placeholder="NIM">
                                     </div>
-                                </div>
+                                    <div class="flex items-center justify-center">
+                                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                                Check
+                            </button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -171,6 +149,7 @@
     <script src="{{ asset('fix-theme/assets/js/custom/pages/pricing/general.js') }}"></script>
 
 </body>
+
 
 </html>
 

@@ -106,7 +106,8 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $student = Student::find($id);
+        return view('admin.student.edit', compact('student'));
     }
 
     /**
@@ -118,7 +119,29 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // Validasi input
+        $request->validate([
+            'status' => 'required|int', // Validasi status
+            // Tambahkan validasi lain jika diperlukan
+        ]);
+
+        // Mencari siswa berdasarkan ID
+        $student = Student::findOrFail($id);
+
+        // Mengupdate data siswa
+        $student->status = $request->input('status');
+        // Jika Anda ingin mengupdate field lain, tambahkan di sini
+        // $student->nim = $request->input('nim'); // Contoh jika ingin mengupdate NIM
+        // $student->nama = $request->input('nama'); // Contoh jika ingin mengupdate Nama
+        // $student->kelas = $request->input('kelas'); // Contoh jika ingin mengupdate Kelas
+        // $student->gen = $request->input('gen'); // Contoh jika ingin mengupdate Gen
+        // $student->message = $request->input('message'); // Contoh jika ingin mengupdate Message
+
+        // Simpan perubahan ke database
+        $student->save();
+
+        // Redirect atau return response sesuai kebutuhan
+        return redirect('/student')->with('success', 'Data siswa berhasil diperbarui.');
     }
 
     /**

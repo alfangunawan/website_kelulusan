@@ -58,7 +58,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('/import_excel', [StudentController::class, 'import_excel']);
         Route::get('/edit/{id}', [StudentController::class, 'edit']);
         Route::get('/detail/{id}', [StudentController::class, 'detail']);
-        Route::patch('/{id}', [StudentController::class, 'update']);
+        Route::patch('/update/{id}', [StudentController::class, 'update']);
         Route::delete('/{id}', [StudentController::class, 'destroy']);
     });
 

@@ -62,9 +62,9 @@ Admin
 
                                 <tr style="font-size: 14px;" v-for="st in student">
 
-                                    <td>@{{ st.nim }}</td>
                                     <td>@{{ st.nama }}</td>
                                     <td>@{{ st.kelas }}</td>
+                                    <td>@{{ st.nim }}</td>
                                     <td>@{{ st.gen }}</td>
                                     <td v-if="st.status == 1">
                                         <span class="badge bg-success">
@@ -85,7 +85,14 @@ Admin
                                     </td>
 
                                     <td>@{{ st.message }}</td>
-                                    <td><a class="btn btn-danger" href="" @click.prevent="deleteRecord(st.id)"><i class="fa fa-trash"></i></a></td>
+                                    <td>
+                                        <a class="btn btn-danger btn-sm" href="" @click.prevent="deleteRecord(st.id)">
+                                            <i class="fa fa-trash"></i>
+                                        </a>
+                                        <a class="btn btn-primary btn-sm" href="" @click.prevent="editRecord(st.id)">
+                                            <i class="fa fa-edit"></i>
+                                        </a>
+                                    </td>
 
                                 </tr>
 
@@ -197,6 +204,9 @@ Admin
                         })
                     }
                 })
+            },
+            editRecord: function(id) {
+                window.location.href = '/student/edit/' + id; // Ganti dengan URL yang sesuai jika perlu
             },
 
 

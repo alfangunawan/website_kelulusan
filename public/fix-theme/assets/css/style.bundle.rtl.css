@@ -47754,7 +47754,7 @@ label.rating-label:hover ~ .rating-label > .svg-icon svg:hover [fill]:not(.perma
   display: none;
 }
 .landing-header .menu .menu-link.active {
-  color: #ffffff;
+  color: #0f172a;
 }
 [data-kt-sticky-landing-header=on] .landing-header .menu .menu-link.active {
   color: #009EF7;

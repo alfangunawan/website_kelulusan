@@ -78,11 +78,9 @@ class DeleteAllController extends Controller
      */
     public function destroy()
     {
-        $student = Student::all();
-        dd($student);
-
+        // Menggunakan truncate untuk menghapus semua data
         try {
-            $student->delete();
+            Student::truncate(); // Menghapus semua data dalam tabel
             return [
                 'message' => 'data has been deleted',
                 'error' => false,
