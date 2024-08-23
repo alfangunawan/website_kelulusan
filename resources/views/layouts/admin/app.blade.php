@@ -83,22 +83,6 @@ $web = Web::first();
 @include('layouts.admin.sidebar')
 
 
-<!--
-<div class="app-content content">
-    <div class="content-wrapper">
-
-    </div>
-</div>
-
-<div class="content-body">
-    <section class="row">
-        <div class="col-sm-12">
-        </div>
-    </section>
-</div>
- -->
-
-
 <div class="app-content content">
     <div class="content-wrapper">
 
