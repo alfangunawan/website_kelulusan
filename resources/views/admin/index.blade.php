@@ -56,18 +56,7 @@ Admin
                         <i class="icon-user-unfollow text-4xl"></i>
                     </div>
                     <div class="ml-4 text-right">
-                        <h3 class="text-2xl font-bold">{{ $student_pending }}</h3>
-                        <span>Kelulusan Bersyarat</span>
-                    </div>
-                </div>
-            </div>
-            <div class="bg-red-500 text-white p-4 rounded-lg shadow-lg">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0">
-                        <i class="icon-user-unfollow text-4xl"></i>
-                    </div>
-                    <div class="ml-4 text-right">
-                        <h3 class="text-2xl font-bold">{{ $student_pending }}</h3>
+                        <h3 class="text-2xl font-bold">{{ $student_notgraduated }}</h3>
                         <span>Peserta Tidak Lulus</span>
                     </div>
                 </div>

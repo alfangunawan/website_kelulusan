@@ -15,7 +15,7 @@ $web = Web::first();
             <div class="navbar-header">
                 <ul class="nav navbar-nav flex-row">
                     <li class="nav-item mobile-menu d-md-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu font-large-1"></i></a></li>
-                    <li class="nav-item"><a class="navbar-brand" href="/dashboard">
+                    <li class="nav-item"><a class="navbar-brand flex flex-row gap-2" href="/dashboard">
                             <img class="brand-logo" alt="logo" src="/files/logo/{{ $web->logo }}" width="35px">
                             <h5 class="flex items-center text-white text-2xl font-bold">{{ $web->web_name }}</h5>
                         </a></li>

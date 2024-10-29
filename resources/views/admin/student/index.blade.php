@@ -48,12 +48,12 @@ Admin
                         <table id="example" class="table table-striped table-bordered" style="width:100%">
                             <thead>
                                 <tr class="bg-success text-white" style="font-size: 14px;">
-                                    <th>Nama</th>
+                                    <th>NAMA</th>
                                     <th>Kelas</th>
                                     <th>NIM</th>
                                     <th>GEN</th>
-                                    <th>status </th>
-                                    <th>Pesan</th>
+                                    <th>TOTAL NILAI</th>
+                                    <th>STATUS </th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -65,7 +65,8 @@ Admin
                                     <td>@{{ st.nama }}</td>
                                     <td>@{{ st.kelas }}</td>
                                     <td>@{{ st.nim }}</td>
-                                    <td>@{{ st.gen }}</td>
+                                    <td>@{{ st.gen }}</td> 
+                                    <td>@{{ st.total_nilai }}</td>                
                                     <td v-if="st.status == 1">
                                         <span class="badge bg-success">
                                             LULUS
@@ -79,12 +80,11 @@ Admin
                                     </td>
 
                                     <td v-if="st.status == 0">
-                                        <span class="badge bg-warning">
+                                        <span class="badge bg-danger">
                                             TIDAK LULUS
                                         </span>
                                     </td>
 
-                                    <td>@{{ st.message }}</td>
                                     <td>
                                         <a class="btn btn-danger btn-sm" href="" @click.prevent="deleteRecord(st.id)">
                                             <i class="fa fa-trash"></i>

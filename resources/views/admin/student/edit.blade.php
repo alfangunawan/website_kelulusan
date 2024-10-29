@@ -36,22 +36,42 @@ Admin
 
                         <div class="form-group">
                             <label for="nim">NIM</label>
-                            <input type="text" class="form-control" id="nim" name="nim" value="{{ $student->nim }}" readonly>
+                            <input type="text" class="form-control" id="nim" name="nim" value="{{ $student->nim }}">
                         </div>
 
                         <div class="form-group">
                             <label for="nama">Nama</label>
-                            <input type="text" class="form-control" id="nama" name="nama" value="{{ $student->nama }}" readonly>
+                            <input type="text" class="form-control" id="nama" name="nama" value="{{ $student->nama }}">
                         </div>
 
                         <div class="form-group">
                             <label for="kelas">Kelas</label>
-                            <input type="text" class="form-control" id="kelas" name="kelas" value="{{ $student->kelas }}" readonly>
+                            <input type="text" class="form-control" id="kelas" name="kelas" value="{{ $student->kelas }}">
                         </div>
 
                         <div class="form-group">
                             <label for="gen">Gen</label>
-                            <input type="text" class="form-control" id="gen" name="gen" value="{{ $student->gen }}" readonly>
+                            <input type="text" class="form-control" id="gen" name="gen" value="{{ $student->gen }}">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gen">Pra Opening</label>
+                            <input type="text" class="form-control" id="pra_opening" name="pra_opening" value="{{ $student->pra_opening }}">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gen">Week 1</label>
+                            <input type="text" class="form-control" id="week1" name="week1" value="{{ $student->week1 }}">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gen">Week 2</label>
+                            <input type="text" class="form-control" id="week2" name="week2" value="{{ $student->week2 }}">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gen">Nilai Keaktifan</label>
+                            <input type="text" class="form-control" id="nilai_keaktifan" name="nilai_keaktifan" value="{{ $student->nilai_keaktifan }}">
                         </div>
 
                         <div class="form-group">
@@ -59,13 +79,7 @@ Admin
                             <select class="form-control" id="status" name="status">
                                 <option value="1" {{ $student->status == 1 ? 'selected' : '' }}>Lulus</option>
                                 <option value="0" {{ $student->status == 0 ? 'selected' : '' }}>Tidak Lulus</option>
-                                <option value="2" {{ $student->status == 2 ? 'selected' : '' }}>Lulus Bersyarat</option>
                             </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea class="form-control" id="message" name="message" readonly>{{ $student->message }}</textarea>
                         </div>
 
                         <div>

@@ -18,10 +18,16 @@ class StudentController extends Controller
      */
     public function index()
     {
+        $students = Student::all();
 
-        $student = Student::all();
+        // Menghitung total_nilai untuk setiap siswa
+        foreach ($students as $student) {
+            $student->calculateTotalNilai(); // Memanggil metode untuk menghitung total nilai
+            $student->save(); // Menyimpan total_nilai ke database
+        }
+
         return view('admin.student.index', [
-            'student' => $student,
+            'student' => $students,
         ]);
     }
 
@@ -129,13 +135,10 @@ class StudentController extends Controller
         $student = Student::findOrFail($id);
 
         // Mengupdate data siswa
-        $student->status = $request->input('status');
-        // Jika Anda ingin mengupdate field lain, tambahkan di sini
-        // $student->nim = $request->input('nim'); // Contoh jika ingin mengupdate NIM
-        // $student->nama = $request->input('nama'); // Contoh jika ingin mengupdate Nama
-        // $student->kelas = $request->input('kelas'); // Contoh jika ingin mengupdate Kelas
-        // $student->gen = $request->input('gen'); // Contoh jika ingin mengupdate Gen
-        // $student->message = $request->input('message'); // Contoh jika ingin mengupdate Message
+        $student->fill($request->all()); // Mengisi semua data dari request
+
+        // Hitung total nilai
+        $student->calculateTotalNilai(); // Memanggil metode untuk menghitung total nilai
 
         // Simpan perubahan ke database
         $student->save();

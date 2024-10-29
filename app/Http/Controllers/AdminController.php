@@ -16,19 +16,24 @@ class AdminController extends Controller
     public function index()
     {
         $student = Student::all();
+        
+        // Count total students
+        $total_student = $student->count();
+        
+        // Count graduated students (status 1)
         $student_graduated = $student->filter(function ($item) {
             return $item->status == 1;
         })->count();
-
-        $student_pending = $student->filter(function ($item) {
-            return $item->status == 2;
+    
+        // Count not graduated students (status 3)
+        $student_notgraduated = $student->filter(function ($item) {
+            return $item->status == 0;
         })->count();
-
-        $total_student = Student::all()->count();
+    
         return view('admin.index', [
             'total_student' => $total_student,
             'student_graduated' => $student_graduated,
-            'student_pending' => $student_pending,
+            'student_notgraduated' => $student_notgraduated,
         ]);
     }
 

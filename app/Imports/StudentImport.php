@@ -37,7 +37,10 @@ class StudentImport implements ToModel, WithStartRow
             'kelas' => $row[3], // Adjusted index
             'gen' => $row[4], // Adjusted index
             'status' => $row[5], // Adjusted index
-            'message' => $row[6], // Adjusted index
+            'pra_opening' => $row[6], // Adjusted index
+            'week1' => $row[7], // Adjusted index
+            'week2' => $row[8], // Adjusted index
+            'nilai_keaktifan' => $row[9], // Adjusted index
         ]);
     }
 }
