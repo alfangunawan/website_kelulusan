@@ -1,9 +1,9 @@
 @extends('layouts.wrapper')
 
 @section('content')
-<div class="grid grid-cols-2 bg-red-200">
+<div class="grid grid-rows-2">
     <div class="flex justify-center mb-2">
-        <img alt="Logo" src="/files/logo/knight.png" width="180px">
+        <img alt="Logo" src="/files/logo/tameng_genesis.png" style="max-width: 100%; height: auto;" width="175px">
     </div>
 
     <div>
@@ -16,7 +16,7 @@
         @if($setting->status == 1)
         <div class="max-w-sm bg-white rounded-lg overflow-hidden shadow-lg mx-auto">
             <div class="p-6">
-                <h2 class="text-2xl font-bold text-gray-800 mb-2">Check Status Kelulusan</h2>
+                <h2 class="text-2xl font-bold text-gray-800 mb-2 text-center">Check Status Kelulusan</h2>
                 <p class="text-gray-700 mb-6">Silahkan isi kolom berikut</p>
                 <form action="{{ route('check') }}" method="POST">
                     @csrf
